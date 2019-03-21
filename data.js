@@ -1,5 +1,4 @@
-let data =
-{
+let data = {
     "count": 61, 
     "next": "https://swapi.co/api/planets/?page=2", 
     "previous": null, 
@@ -226,8 +225,29 @@ let data =
     ]
 }
 
-let tbody = document.getElementById('tbody');
+//let tbody = document.getElementById('tbody');
 
 for (let i = 0; i < data.results.length; i++) {
-    tbody.innerHTML += "<tr><td>"+ data.results[i].name +"</td><td>"+ data.results[i].rotation_period +"</td><td>"+ data.results[i].orbital_period +"</td><td>"+ data.results[i].diameter +"</td><td>"+ data.results[i].climate +"</td><td>"+ data.results[i].gravity +"</td><td>"+ data.results[i].terrain +"</td><td>"+ data.results[i].surface_water +"</td><td>"+ data.results[i].population +"</td><td>"+ data.results[i].residents +"</td><td>"+ data.results[i].films +"</td><td>"+ data.results[i].created +"</td><td>"+ data.results[i].edited +"</td><td>"+ data.results[i].url +"</td></tr>";
+    tbody.innerHTML += "<tr><td>"+ data.results[i].name +"</td><td>"+ data.results[i].rotation_period +"</td><td>"+ data.results[i].orbital_period +"</td><td>"+ data.results[i].diameter +"</td><td>"+ data.results[i].climate +"</td><td>"+ data.results[i].gravity +"</td><td>"+ data.results[i].terrain +"</td><td>"+ data.results[i].surface_water +"</td><td>"+ data.results[i].created +"</td><td>"+ data.results[i].edited +"</td></tr>";
 };
+
+function searchData() {
+
+    let input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("table");
+    tr = table.getElementsByTagName("tr");
+  
+    for (let i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      } 
+    }
+  }
