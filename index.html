@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="searchimage.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Superman is Dead</title>
+    <title>Planetarium Univers</title>
 </head>
 <body>
-        <table class="table">
+    <div class="wrapper">
+        <form class="form-inline margin-btm-md">
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" id="search" onkeyup="searchData()" placeholder="Search Your Planet...">
+            </div>
+                <button type="submit" class="btn btn-dark mb-2">Find!</button>
+        </form>
+        <table class="table" id="table">
                 <thead>
                   <tr>
                     <th>Planet Name</th>
@@ -19,19 +27,15 @@
                     <th>Gravity</th>
                     <th>Terrain</th>
                     <th>Surface Water</th>
-                    <th>Population</th>
-                    <th>Residents</th>
-                    <th>Films</th>
                     <th>Created</th>
                     <th>Edited</th>
-                    <th>url</th>
                   </tr>
                 </thead>
                 <tbody  id="tbody">
 
                 </tbody>
             </table>
-
+    </div>
     <script src = "data.js"></script>
 </body>
 </html>
